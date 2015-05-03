@@ -27,6 +27,7 @@ int main(){
 				LIS[++size] = P[i];
 			else if (P[i].first - LIS[L].first < LIS[L].second - P[i].second)
 				LIS[L] = P[i];
+			// first => x, second => w
 		}
 	}
 	printf("%d\n", size);

@@ -1,4 +1,4 @@
-﻿/* 15249850	10139	Factovisors	Accepted	C++	0.435	2015-03-31 15:54:06 */
+﻿/* 15279099	10139	Factovisors	Accepted	C++	0.432	2015-04-06 13:26:23 */
 #include<bits\stdc++.h>
 using namespace std;
 int prime[50000], ptr;
@@ -21,11 +21,9 @@ bool check(int a, int b){
 		int count = 0;
 		while (b % prime[i] == 0)
 			b /= prime[i], count++;
-		for (int j = prime[i], k; count > 0 && j <= a; j += prime[i]){
-			k = j;
-			while (k % prime[i] == 0)
-				count--, k /= prime[i];
-		}
+		long long j = prime[i];
+		while (j <= a && count > 0)
+			count -= a / j, j *= prime[i];
 		if (count > 0)	return false;
 	}
 	if (b > 1 && a < b)
