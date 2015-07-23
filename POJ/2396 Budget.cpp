@@ -84,22 +84,22 @@ bool init(){
 		for (int j = 1; j <= n; j++)
 			R[i][j] = min(a[i], b[j]), L[i][j] = 0;
 	scanf("%d", &p);
-	while (p--){
-		int u, v, x;
-		char com;
-		int L1, L2, R1, R2;
-		scanf("%d %d %c %d", &u, &v, &com, &x);
-		L1 = R1 = u, L2 = R2 = v;
-		if (u == 0)L1 = 1, R1 = m;
-		if (v == 0)L2 = 1, R2 = n;
-		for (u = L1; u <= R1; u++)
-			for (v = L2; v <= R2; v++)
-				switch (com){
-				case '>':	L[u][v] = max(L[u][v], x + 1);	break;
-				case '=':	R[u][v] = min(R[u][v], x), L[u][v] = max(L[u][v], x);	break;
-				case '<':	R[u][v] = min(R[u][v], x - 1);	break;
-			}
-	}
+  while (p--){
+    int u, v, x;
+    char com;
+    int L1, L2, R1, R2;
+    scanf("%d %d %c %d", &u, &v, &com, &x);
+    L1 = R1 = u, L2 = R2 = v;
+    if (u == 0)L1 = 1, R1 = m;
+    if (v == 0)L2 = 1, R2 = n;
+    for (u = L1; u <= R1; u++)
+      for (v = L2; v <= R2; v++)
+        switch (com){
+        case '>':	L[u][v] = max(L[u][v], x + 1);	break;
+        case '=':	R[u][v] = min(R[u][v], x), L[u][v] = max(L[u][v], x);	break;
+        case '<':	R[u][v] = min(R[u][v], x - 1);	break;
+      }
+  }
 	if (sumCol != sumRow)
 		return false;
 	for (int i = 0; i <= t; i++)
