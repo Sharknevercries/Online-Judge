@@ -20,9 +20,6 @@ using namespace std;
 // typedef
 typedef long long lli;
 typedef unsigned long long ull;
-// template
-template<class T> T max(T a, T b, T c){ return max(a, max(b, c)); }
-template<class T> T min(T a, T b, T c){ return min(a, min(b, c)); }
 // const variable
 #define MAX_N 1000
 #define MAX_M 1000
