@@ -30,7 +30,7 @@ Constraints
  
 -           T ≤ 100
 
--           Both G and L will be less than 231.
+-           Both G and L will be less than 2^31.
 
 Sample Input
  
